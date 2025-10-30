@@ -6,6 +6,6 @@
      runs-on: ubuntu-latest
 
      steps:
-     - name: print hell world
+     - name: print hello world
        run: echo "Hello World"
      
