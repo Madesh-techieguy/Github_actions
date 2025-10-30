@@ -14,5 +14,7 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Run by py script
-        run: python gitea/hello.py
+      - name: Run by shell script
+        run: |                              # | --- run multiple lines as one block
+            chmod +x run_file.sh 
+            ./run_file.sh
