@@ -16,5 +16,5 @@ jobs:
 
       - name: Run by shell script
         run: |                              # | --- run multiple lines as one block
-            chmod +x gitea/run_file.sh 
-            ./gitea/run_file.sh
+            chmod +x gitea/file.sh 
+            ./gitea/file.sh
