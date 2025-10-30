@@ -2,25 +2,17 @@ name: Run Hello-world from py script
 on: push
 
 jobs:
-    hello:
-        runs-on: ubuntu-latest
+  hello:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: clone repo
-            uses: actions/checkout@v3                    # to get your project’s code into the workflow so other steps can work with it.
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v3  # to get your project’s code into the workflow so other steps can work with it.
 
+      - name: python setup
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
 
-
-          - name: python setup
-            uses: actions/setup-python@v6
-            with:
-              python-version: '3.13' 
-
-          - name: Run by py script  
-            run: python hello.py
-            
-
-
-
-
-
+      - name: Run by py script
+        run: python gitea/hello.py
