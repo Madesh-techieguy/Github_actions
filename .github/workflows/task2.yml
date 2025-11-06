@@ -1,4 +1,4 @@
-name: Hello
+name: AWS-Check2
 
 on: push
 
