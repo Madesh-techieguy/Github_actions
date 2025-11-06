@@ -1,0 +1,32 @@
+name: Hello
+
+on: push
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+         - name: Check if secrets exist
+           run: |
+                  if [ -z "$AWS_ACCESS_KEY_ID" ]; then
+                  echo "❌ AWS_ACCESS_KEY_ID is empty"
+                  else
+                  echo "✅ AWS_ACCESS_KEY_ID is set"
+                  fi
+
+                  if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
+                  echo "❌ AWS_SECRET_ACCESS_KEY is empty"
+                  else
+                  echo "✅ AWS_SECRET_ACCESS_KEY is set"
+                  fi
+
+                  if [ -z "$AWS_REGION" ]; then
+                  echo "❌ AWS_REGION is empty"
+                  else
+                  echo "✅ AWS_REGION is set"
+                  fi
+    env:
+       AWS_ACCESS_KEY_ID: ${{ secrets.SECRET1  }}
+       AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET2  }}
+       AWS_REGION: ${{ secrets.SECRET3  }}
